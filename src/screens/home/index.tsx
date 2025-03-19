@@ -1,10 +1,16 @@
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { styles } from './styles'
+import { Participant } from '../../components/participant'
 
 export function Home() {
   function handleParticipantAdd() {
     console.log('participante adicionado')
   }
+
+  function handleParticipantRemove() {
+    console.log('participante removido')
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.eventNames}>Nome do evento</Text>
@@ -21,6 +27,9 @@ export function Home() {
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
+
+      <Participant name="123123sdasd" />
+      <Participant name="asdasdasd" onRemove={handleParticipantRemove} />
     </View>
   )
 }
